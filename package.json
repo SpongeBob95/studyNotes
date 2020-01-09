@@ -1,0 +1,23 @@
+{
+  "name": "studyNotes",
+  "version": "0.0.1",
+  "description": "a blog that reconds the learning content",
+  "main": "index.js",
+  "authors": {
+    "name": "liziying",
+    "email": "1090316608@qq.com"
+  },
+  "repository": "/studyNotes",
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.0.0",
+    "@vuepress/theme-blog": "^1.0.0"
+  },
+  "dependencies": {
+    "@vuepress/theme-default": "^1.0.0-rc.1"
+  }
+}
