@@ -4,6 +4,7 @@ module.exports = {
 	theme: '@vuepress/theme-blog', // OR shortcut: @vuepress/blog
 	base: '/studyNotes/',
 	themeConfig: {
+		// dateFormat: 'YYYY-MM-DD',	
 		/**
 		 * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
 		 */

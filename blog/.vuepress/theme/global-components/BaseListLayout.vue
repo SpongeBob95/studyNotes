@@ -94,7 +94,8 @@ export default {
     },
 
     resovlePostDate(date) {
-      return new Date(date.replace(/\-/g, '/').trim()).toDateString()
+		return date;
+      // return new Date(date.replace(/\-/g, '/').trim()).toDateString()
     },
   },
 }

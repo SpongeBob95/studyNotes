@@ -1,7 +1,8 @@
 ---
-date: 2020-01-9
+date: 2020-01-07
 tag: 
   - webpack
+  - 前端
 author: SpongeBob95
 
 ---
@@ -129,6 +130,10 @@ browserslist在package.json中的写法
 
 #### plugin: 定义插件
 ``` javascript
+// 与热更新不兼容，要开发环境下使用热更新，需要在plugins配置中将disable设置为true
+const extractTextCss = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 plugins: [
 	new extractTextCss({
 		filename: '[name].min.css'
@@ -150,20 +155,14 @@ plugins: [
 		指定为app则打包结果的index.html中只会引入app.js的打包结果
 		chunks: ['app'] */
 	}),
-	
-	/** 另外,
-	// 多入口文件打包时，如果需要多页面展示（每个js都对应一个html界面），
-	// 需要几个html界面就需要配置几个HtmlWebpackPlugin
-	 new HtmlWebpackPlugin({
-		filename: 'index.html',
-		template: './src/index.html',
-		// 配置需要加载的js（多页面打包时配置）
-		chunks: ['app'],
-	}),
-	new HtmlWebpackPlugin({
-		filename: 'index2.html',
-		template: './src/index.html',
-		chunks: ['app2']
-	})，*/
 ]
+```
+
+记一个方便好用的小插件
+
+这个插件可以删除指定文件夹，文件路径为output.path。所以将path配置为dist目录，可在打包前自动清理上次打包的结果文件。
+``` javascript
+const {
+	CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 ```
